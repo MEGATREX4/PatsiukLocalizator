@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta property="og:locale" content="uk_UA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patsiuk Localizator</title>
+  <meta property="og:title" content="Patsiuk Localizator" />
+  <meta property="og:site_name" content="Patsiuk Localizator" />
+  <meta property="og:image" content="https://i.imgur.com/GBG9KA1.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/scrollbar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" href="https://i.imgur.com/vBDgh5k.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/lib/vanilla-tilt.min.js"></script>
+  
+</head>
+
+<body>
+  <a class="navbar-brand" href="#">
+    <img src="image/logo.png" alt="logo" width="40" height="40" class="d-inline-block align-text-top">
+    <div class="navtext">
+      <div class="title">Patsiuk Localizator</div>
+      <div class="slogan">Перекладаємо для майбутнього</div>
+    </div>
+  </a>
+  
+
+  <!-- Cards -->
+  <div class="container cards-container mt-5">
+    <div class="row justify-content-center">
+      <h2 class="typed-text" id="typed-text"> <span class="cursor">_</span></h2>
+      <!-- Тут буде наповнення карток з JavaScript -->
+    </div>
+  </div>
+
+
+<!-- About us -->
+<div class="container about-us">
+  <h2 class="typed-text" id="typed-text">Про нас <span class="cursor">_</span></h2>
+  <div class="row justify-content-center mt-4">
+  
+  </div>
+
+<!-- Contact us -->
+<div class="container contact-us mt-5">
+  <h3 class="typed-text" id="typed-text">Зв'язок з нами <span class="cursor">_</span></h3>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 text-center">
+      <a href="https://t.me/yourtelegramlink" target="_blank" class="btn btn-primary btn-lg me-2">
+        <i class="fa fa-telegram"></i> Telegram
+      </a>
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="https://twitter.com/yourxhandle" target="_blank" class="btn btn-info btn-lg">
+        <i class="fa fa-twitter"></i> X (Twitter)
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        createGameCards(data.games);
+        createTranslatorCards(data.translators);
+        // Initialize VanillaTilt after creating the game cards
+        VanillaTilt.init(document.querySelectorAll(".card-custom"), {
+          max: 15,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.5
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+  });
+
+  function createGameCards(games) {
+    const container = document.querySelector('.cards-container .row');
+    games.forEach(game => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4 mb-4';
+      col.innerHTML = `
+        <div class="card card-custom">
+          <img src="${game.image}" alt="${game.title}">
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  }
+
+  function createTranslatorCards(translators) {
+    const container = document.querySelector('.about-us .row');
+    translators.forEach(translator => {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-4';
+      col.innerHTML = `
+        <div class="card about-us-card-custom">
+          <div class="card-body d-flex align-items-center">
+            <img src="${translator.image}" alt="${translator.name}" class="card-img-top me-3" />
+            <div>
+              <h5 class="card-title">${translator.name}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">${translator.role}</h6>
+              <p class="card-text">${translator.bio}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  }
+</script>
+
+<script>
+  const wrongTexts = ["наше порволіо", "Наше портфольо"]; // Array of incorrect texts
+  const correctText = "Наше портфоліо"; // The correct text
+  let typedText = ""; // Store the text being typed
+  let currentCharIndex = 0;
+  let mistakeIndex = 0; // Keep track of which mistake we are on
+  let isErasing = false;
+
+  const typedTextElement = document.getElementById("typed-text");
+  const cursor = document.querySelector(".cursor");
+
+  function typeAndErase() {
+    const currentWrongText = wrongTexts[mistakeIndex]; // Get current mistake text
+    if (!isErasing) {
+      if (currentCharIndex < currentWrongText.length) {
+        // Typing the wrong text
+        typedText += currentWrongText.charAt(currentCharIndex);
+        typedTextElement.innerHTML = typedText;
+        currentCharIndex++;
+        setTimeout(typeAndErase, 150); // Typing speed
+      } else {
+        // Start erasing after typing the wrong text
+        setTimeout(() => {
+          isErasing = true;
+          setTimeout(typeAndErase, 500); // Pause before erasing
+        }, 1000); // Pause after typing the wrong word
+      }
+    } else {
+      if (currentCharIndex > 0) {
+        // Erasing the wrong text
+        typedText = typedText.slice(0, -1); // Remove one character at a time
+        typedTextElement.innerHTML = typedText;
+        currentCharIndex--;
+        setTimeout(typeAndErase, 100); // Erasing speed
+      } else {
+        // Move to the next mistake or start typing the correct text
+        if (mistakeIndex < wrongTexts.length - 1) {
+          // Move to the next mistake
+          isErasing = false;
+          mistakeIndex++;
+          currentCharIndex = 0;
+          setTimeout(typeAndErase, 500); // Delay before starting next mistake
+        } else {
+          // After mistakes, type the correct text
+          typeCorrectText();
+        }
+      }
+    }
+  }
+
+  function typeCorrectText() {
+    if (currentCharIndex < correctText.length) {
+      // Typing the correct text
+      typedText += correctText.charAt(currentCharIndex);
+      typedTextElement.innerHTML = typedText;
+      currentCharIndex++;
+      setTimeout(typeCorrectText, 150); // Typing speed for the correct text
+    } else {
+      // Show the blinking cursor at the end
+      cursor.style.display = 'inline-block';
+    }
+  }
+
+  setTimeout(typeAndErase, 500); // Start typing with a delay
+</script>
+
+<!-- Footer -->
+<footer class="footer">
+  <div>© 2024 Patsiuk Localizator</div>
+  <div>Створено з <span style="color: red;">❤</span> <a href="https://megatrex4.netlify.app/">MEGATREX4</a></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

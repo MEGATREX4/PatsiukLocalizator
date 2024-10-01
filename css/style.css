@@ -1,0 +1,257 @@
+/* Color Palette */
+:root {
+  --dark-blue: #001F3F; /* Dark Blue */
+  --medium-blue: #3A6D8C; /* Medium Blue */
+  --light-blue: #6A9AB0; /* Light Blue */
+  --cream: #EAD8B1; /* Cream */
+  --black: #000000; /* Black */
+  --white: #FFFFFF; /* White */
+  --background-color: #EAD8B1; /* Background color using cream */
+  --text-color: var(--dark-blue); /* Text color */
+  --navbar-bg: var(--white); /* Navbar background */
+  --btn-bg: var(--medium-blue); /* Button background */
+  --footer-bg: var(--dark-blue); /* Footer background */
+  --card-bg: var(--white); /* Card background */
+}
+
+/* Background Animation */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background-color: var(--background-color); /* Fallback color */
+  color: var(--text-color);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Roboto, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+/* Typing Effect */
+#portfolio-header, .typed-text {
+  font-family: 'Courier New', monospace; /* Monospace for a typing feel */
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 46px;
+  height: 45px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: transparent;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  padding: 1rem;
+  background-color: var(--navbar-bg); /* Navbar background */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.navtext {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack title and slogan */
+  margin-left: 10px; /* Add space between logo and text */
+}
+
+.title {
+  font-size: 1.5rem; /* Title size */
+  margin-bottom: 0; /* Remove margin */
+}
+
+.slogan {
+  font-size: 0.85rem; /* Slogan size */
+  color: var(--text-color);
+  margin-top: 5px; /* Add some space above the slogan */
+}
+
+/* Button Styles */
+.btn-custom {
+  background-color: var(--btn-bg);
+  color: var(--white);
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.btn-custom:hover {
+  background-color: var(--btn-bg);
+  opacity: 0.85;
+}
+
+/* Card Styles */
+.card-custom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+/* Card Hover Effect */
+.card-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styles */
+.card-custom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Foil Effect Animation */
+.card-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 255, 0.1),
+    rgba(128, 0, 128, 0.1),
+    rgba(255, 255, 0, 0.1),
+    rgba(255, 0, 255, 0.1)
+  );
+  background-size: 400% 400%; /* Increase for a smoother transition */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+/* Animation on Hover */
+.card-custom:hover::before {
+  opacity: 1;
+  animation: foilEffect 2s ease infinite;
+}
+
+@keyframes foilEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--footer-bg);
+  color: var(--white);
+  margin-top: 2rem;
+  border-radius: 20px 20px 0 0;
+}
+
+.footer a {
+  color: var(--btn-bg);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Flexbox Layout for Cards */
+.cards-container {
+  min-height: calc(100vh - 500px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col-md-6, .col-lg-4 {
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .card-custom {
+    height: auto;
+  }
+}
+
+/* About Us Card Styles */
+.about-us-card-custom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Flexbox for card alignment */
+  flex-direction: column; /* Align content vertically */
+  height: 300px; /* Set fixed height */
+}
+
+/* Image Styles for About Us Card */
+.about-us-card-custom .card-img-top {
+  width: 70px; /* Adjust image width */
+  height: 70px; /* Adjust image height */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 50%; /* Optional: make it circular */
+}
+
+/* Card Body Styles */
+.card-body {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  height: 100%; /* Fill the card height */
+}
+
+/* Adjust Title and Text Alignment */
+.card-title, .card-subtitle, .card-text {
+  margin-bottom: 0.25rem; /* Adjust spacing */
+}
+
+/* Contact Us Button Styles */
+.contact-us .btn {
+  min-width: 150px; /* Set a minimum width for the buttons */
+  font-size: 1.2rem; /* Increase font size for better readability */
+  padding: 10px 20px; /* Adjust padding for a better button appearance */
+}
+
+/* Reduce Space Between Buttons */
+.contact-us .row > div {
+  margin-bottom: 0; /* Remove bottom margin */
+}
