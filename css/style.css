@@ -1,41 +1,46 @@
-/* Color Palette */
 :root {
-  --dark-blue: #001F3F; /* Dark Blue */
-  --medium-blue: #3A6D8C; /* Medium Blue */
-  --light-blue: #6A9AB0; /* Light Blue */
-  --cream: #EAD8B1; /* Cream */
-  --black: #000000; /* Black */
-  --white: #FFFFFF; /* White */
-  --background-color: #EAD8B1; /* Background color using cream */
-  --text-color: var(--dark-blue); /* Text color */
-  --navbar-bg: var(--white); /* Navbar background */
-  --btn-bg: var(--medium-blue); /* Button background */
-  --footer-bg: var(--dark-blue); /* Footer background */
-  --card-bg: var(--white); /* Card background */
+  --dark-blue: rgb(11, 51, 104);
+  --medium-blue: rgb(65, 95, 145);
+  --light-blue: rgb(214, 227, 255);
+  --cream: rgb(249, 249, 255);
+  --black: rgb(0, 0, 0);
+  --text: rgb(25, 28, 32);
+  --background-color: rgb(249, 249, 255);
+  --text-color: var(--text);
+  --navbar-bg: var(--dark-blue);
+  --btn-bg: var(--medium-blue);
+  --footer-bg: var(--dark-blue);
+  --card-bg: rgb(249, 249, 255);
+  --surface-color: rgb(249, 249, 255);
+  --on-surface-color: var(--text-color);
 }
 
-/* Background Animation */
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
 @keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 body {
-  background-color: var(--background-color); /* Fallback color */
-  color: var(--text-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Roboto, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-color)!important;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
-/* Typing Effect */
 #portfolio-header, .typed-text {
-  font-family: 'Courier New', monospace; /* Monospace for a typing feel */
+  font-family: 'Courier New', monospace;
   white-space: nowrap;
   overflow: hidden;
   min-height: 46px;
@@ -43,8 +48,8 @@ body {
 }
 
 .cursor {
-  display: inline-block;
-  width: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
   background-color: transparent;
   animation: blink 0.7s steps(1) infinite;
 }
@@ -58,10 +63,9 @@ body {
   }
 }
 
-/* Navbar Styles */
 .navbar {
   padding: 1rem;
-  background-color: var(--navbar-bg); /* Navbar background */
+  background-color: var(--navbar-bg);
 }
 
 .navbar-brand {
@@ -69,64 +73,55 @@ body {
   font-weight: bold;
   color: var(--text-color);
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
 .navtext {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack title and slogan */
-  margin-left: 10px; /* Add space between logo and text */
-}
-
-.title {
-  font-size: 1.5rem; /* Title size */
-  margin-bottom: 0; /* Remove margin */
-}
-
-.slogan {
-  font-size: 0.85rem; /* Slogan size */
-  color: var(--text-color);
-  margin-top: 5px; /* Add some space above the slogan */
-}
-
-/* Button Styles */
-.btn-custom {
-  background-color: var(--btn-bg);
-  color: var(--white);
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   margin-left: 10px;
 }
 
-.btn-custom:hover {
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.slogan {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  margin-top: -5px;
+}
+
+.btn-custom {
   background-color: var(--btn-bg);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.btn-custom:hover {
+  background-color: var(--medium-blue);
   opacity: 0.85;
 }
 
-/* Card Styles */
 .card-custom {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
   background-color: var(--card-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform;
 }
 
-/* Card Hover Effect */
 .card-custom:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
-/* Image Styles */
 .card-custom img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Foil Effect Animation */
 .card-custom::before {
   content: '';
   position: absolute;
@@ -136,59 +131,58 @@ body {
   height: 100%;
   background: linear-gradient(
     45deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.1),
-    rgba(0, 0, 255, 0.1),
-    rgba(128, 0, 128, 0.1),
-    rgba(255, 255, 0, 0.1),
-    rgba(255, 0, 255, 0.1)
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15),
+    rgba(0, 0, 255, 0.15),
+    rgba(128, 0, 128, 0.15),
+    rgba(255, 255, 0, 0.15),
+    rgba(255, 0, 255, 0.15)
   );
-  background-size: 400% 400%; /* Increase for a smoother transition */
+  background-size: 400% 400%;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease, background-position 2s ease;
   z-index: 1;
 }
 
-/* Animation on Hover */
+.logoimg {
+  margin-left: 20px;
+}
+
 .card-custom:hover::before {
   opacity: 1;
   animation: foilEffect 2s ease infinite;
 }
 
 @keyframes foilEffect {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Footer Styles */
 .footer {
   padding: 2rem;
   text-align: center;
   background-color: var(--footer-bg);
-  color: var(--white);
+  color: var(--cream);
   margin-top: 2rem;
   border-radius: 20px 20px 0 0;
 }
 
 .footer a {
-  color: var(--btn-bg);
-  text-decoration: none;
+  color: var(--cream);
+  text-decoration: var(--cream) wavy underline!important;
+  font-weight: 400;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
 
-/* Flexbox Layout for Cards */
+.btn:hover, .btn {
+  color: white!important;
+}
+
 .cards-container {
-  min-height: calc(100vh - 500px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,53 +199,249 @@ body {
   margin-bottom: 20px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .card-custom {
     height: auto;
   }
 }
 
-/* About Us Card Styles */
+.about-us-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text-cards-container {
+  display: flex;
+}
+
+.container-links {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .about-us-card-custom {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
   background-color: var(--card-bg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex; /* Flexbox for card alignment */
-  flex-direction: column; /* Align content vertically */
-  height: 300px; /* Set fixed height */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
 }
 
-/* Image Styles for About Us Card */
+.about-us-card-custom-flex {
+  min-width: 407px!important;
+  width: 407px!important;
+  max-width: 407px!important;
+  display: grid!important;
+  grid-column: 2 / 7!important;
+  grid-row: 2 / 4!important;
+}
+
 .about-us-card-custom .card-img-top {
-  width: 70px; /* Adjust image width */
-  height: 70px; /* Adjust image height */
-  object-fit: cover; /* Ensure the image covers the area */
-  border-radius: 50%; /* Optional: make it circular */
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Card Body Styles */
 .card-body {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  height: 100%; /* Fill the card height */
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-/* Adjust Title and Text Alignment */
 .card-title, .card-subtitle, .card-text {
-  margin-bottom: 0.25rem; /* Adjust spacing */
+  margin-bottom: 0.25rem;
 }
 
-/* Contact Us Button Styles */
 .contact-us .btn {
-  min-width: 150px; /* Set a minimum width for the buttons */
-  font-size: 1.2rem; /* Increase font size for better readability */
-  padding: 10px 20px; /* Adjust padding for a better button appearance */
+  min-width: 150px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
 }
 
-/* Reduce Space Between Buttons */
 .contact-us .row > div {
-  margin-bottom: 0; /* Remove bottom margin */
+  margin-bottom: 0;
+}
+
+.text-card-container {
+  display: flex;
+}
+
+.support-us .row {
+  align-items: flex-start;
+}
+
+.support-us .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.support-us .rounded-square {
+  width: 100px;
+  height: 100px;
+  background-color: #3A6D8C;
+  margin-bottom: 10px;
+}
+
+.support-us img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.support-us .text {
+  text-align: left!important;
+}
+
+@media (max-width: 768px) {
+  .support-us .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.rounded-square {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%) rotate(35deg) scale(2.2);
+  width: 100px;
+  height: 100px;
+  background-color: var(--medium-blue);
+  border-radius: 30% 70% 70% 30% / 40% 52% 48% 60%;
+  z-index: -1;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-icon {
+  margin-right: 10px;
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.about-us {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-background {
+  position: relative;
+  display: inline-block;
+}
+
+.about-us-background img {
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.footer img {
+  margin: 10px 0;
+}
+
+/* Background with Shapes */
+body {
+  position: relative;
+  overflow-x: hidden; /* Забороняємо прокрутку */
+}
+
+.shape {
+  position: absolute;
+  border-radius: 15%; /* Скруглені краї */
+  opacity: 0.8; /* Прозорість фігур */
+}
+
+/* Квадрати */
+.square {
+  width: 100px; /* Розмір квадрата */
+  height: 100px;
+  background-color: var(--medium-blue);
+  transform: rotate(25deg);
+}
+
+/* Кола */
+.circle {
+  width: 80px; /* Розмір кола */
+  height: 80px;
+  background-color: var(--light-blue);
+  border-radius: 50%; /* Робимо коло */
+}
+
+/* Трикутник */
+.triangle {
+  --r:20px; /* border radius */
+
+  width: 180px;
+  aspect-ratio: 1/cos(30deg);
+  --_g:calc(tan(60deg)*var(--r)) bottom var(--r),#000 98%,#0000 101%;
+  -webkit-mask:
+    conic-gradient(from -30deg at 50% calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
+     0 100%/100% calc(100% - 3*var(--r)/2) no-repeat,
+    radial-gradient(var(--r) at 50% calc(2*var(--r)),#000 98%,#0000 101%),
+    radial-gradient(var(--r) at left  var(--_g)),
+    radial-gradient(var(--r) at right var(--_g));
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+  background: linear-gradient(45deg,var(--dark-blue), var(--dark-blue));
+  transform: rotate(30deg);
+}
+
+.about-image{
+  display: flex;
+}
+
+
+
+.shape {
+  position: absolute; /* Дозволяє вільне позиціонування */
+  z-index: -1; /* Зафіксувати фігури за контентом */
+}
+
+.top-left {
+  top: 10%; /* Відстань зверху */
+  left: 0; /* Прикріпити до лівого краю */
+}
+
+.top-right {
+  top: 20%; /* Відстань зверху */
+  right: 0%; /* Прикріпити до правого краю */
+}
+
+.bottom-left {
+  bottom: 23%; /* Відстань знизу */
+  left: 5%; /* Прикріпити до лівого краю */
+}
+
+.bottom-right {
+  bottom: 13.5%; /* Відстань знизу */
+  right: 10%; /* Прикріпити до правого краю */
+}
+
+@media (max-width: 768px) {
+  .shape {
+    display: none; /* Не показувати фігури */
+  }
 }

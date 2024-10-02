@@ -1,67 +1,104 @@
 {
-    "games": [
-      {
-        "title": "Гра 1",
-        "image": "image/game1.png"
-      },
-      {
-        "title": "Гра 2",
-        "image": "image/game2.png"
-      },
-      {
-        "title": "Гра 3",
-        "image": "image/game3.png"
-      },
-      {
-        "title": "Гра 4",
-        "image": "image/game2.png"
-      },
-      {
-        "title": "Гра 5",
-        "image": "image/game3.png"
-      },
-      {
-        "title": "Гра 6",
-        "image": "image/game1.png"
-      }
-    ],
-    "translators": [
-      {
-        "name": "Іван Петренко",
-        "role": "Лідер спільноти",
-        "image": "image/member1.jpg",
-        "bio": "Я займаюся локалізацією ігор понад 5 років. Моя мета - зробити ігри доступними для українських гравців."
-      },
-      {
-        "name": "Олена Сидоренко",
-        "role": "Модератор спільноти",
-        "image": "image/member3.jpg",
-        "bio": "Я працюю в галузі локалізації понад 3 роки. Мені подобається допомагати іншим знаходити свій шлях у світі ігор."
-      },
-      {
-        "name": "Сергій Коваленко",
-        "role": "Перекладач",
-        "image": "image/member4.jpg",
-        "bio": "Я перекладаю ігри вже понад 4 роки. Моя мета - забезпечити якісний переклад для всіх."
-      },
-      {
-        "name": "Марія Гончаренко",
-        "role": "Технічний перекладач",
-        "image": "image/member5.jpg",
-        "bio": "Я спеціалізуюся на технічній локалізації ігор. Маю понад 2 роки досвіду у цій сфері."
-      },
-      {
-        "name": "Андрій Мельник",
-        "role": "Копірайтер",
-        "image": "image/member6.jpg",
-        "bio": "Я пишу тексти для ігор і локалізую контент, щоб зробити його цікавим для гравців."
-      },
-      {
-        "name": "Тетяна Кузьменко",
-        "role": "Редактор",
-        "image": "image/member7.jpg",
-        "bio": "Я редагую переклади, щоб забезпечити їхню якість та відповідність стандартам."
-      }
-    ]
-  }
-  
+  "games": [
+    {
+      "title": "Гра 1",
+      "image": "image/game1.png"
+    },
+    {
+      "title": "Гра 2",
+      "image": "image/game2.png"
+    }
+  ],
+  "translators": [
+    {
+      "name": "Іван Петренко",
+      "role": "Лідер спільноти",
+      "image": "image/member1.jpg",
+      "bio": "Я займаюся локалізацією ігор понад 5 років. Моя мета - зробити ігри доступними для українських гравців.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    },
+    {
+      "name": "Олена Сидоренко",
+      "role": "Модератор спільноти",
+      "image": "image/member2.jpg",
+      "bio": "Я працюю в галузі локалізації понад 3 роки. Мені подобається допомагати іншим знаходити свій шлях у світі ігор.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    },
+    {
+      "name": "Сергій Коваленко",
+      "role": "Перекладач",
+      "image": "image/member3.jpg",
+      "bio": "Я перекладаю ігри вже понад 4 роки. Моя мета - забезпечити якісний переклад для всіх.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    },
+    {
+      "name": "Марія Гончаренко",
+      "role": "Технічний перекладач",
+      "image": "image/member4.jpg",
+      "bio": "Я спеціалізуюся на технічній локалізації ігор. Маю понад 2 роки досвіду у цій сфері.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    },
+    {
+      "name": "Андрій Мельник",
+      "role": "Копірайтер",
+      "image": "image/member5.jpg",
+      "bio": "Я пишу тексти для ігор і локалізую контент, щоб зробити його цікавим для гравців.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    },
+    {
+      "name": "Тетяна Кузьменко",
+      "role": "Редактор",
+      "image": "image/member6.jpg",
+      "bio": "Я редагую переклади, щоб забезпечити їхню якість та відповідність стандартам. Мені подобається допомагати іншим знаходити свій шлях у світі ігор.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/ivanpetrenko" },
+        { "network": "twitter", "url": "https://twitter.com/ivanpetrenko" },
+        { "network": "linkedin", "url": "https://linkedin.com/in/ivanpetrenko" },
+        { "network": "github", "url": "https://github.com/ivanpetrenko" },
+        { "network": "telegram", "url": "https://t.me/ivanpetrenko" },
+        { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
+        { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
+      ]
+    }
+  ]
+}
