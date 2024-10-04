@@ -71,6 +71,87 @@
         { "network": "instagram", "url": "https://instagram.com/ivanpetrenko" },
         { "network": "youtube-play", "url": "https://youtube.com/ivanpetrenko" }
       ]
+    },
+    {
+      "name": "Дмитро Литвиненко",
+      "role": "Менеджер проєкту",
+      "image": "image/member1.jpg",
+      "bio": "Координую процес перекладу та працюю над тим, щоб кожна гра була локалізована якісно.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/dmytro" }
+      ]
+    },
+    {
+      "name": "Наталія Іваненко",
+      "role": "Контент-менеджер",
+      "image": "image/member2.jpg",
+      "bio": "Моя робота — створювати цікавий контент для нашої спільноти та слідкувати за якістю локалізацій.",
+      "socialLinks": [
+        { "network": "twitter", "url": "https://twitter.com/nataliia" }
+      ]
+    },
+    {
+      "name": "Олександр Бойко",
+      "role": "Технічний підтримка",
+      "image": "image/member3.jpg",
+      "bio": "Моя мета — допомагати з технічними питаннями, які можуть виникнути під час локалізації.",
+      "socialLinks": [
+        { "network": "github", "url": "https://github.com/oleksandr" }
+      ]
+    },
+    {
+      "name": "Світлана Кравченко",
+      "role": "QA Інженер",
+      "image": "image/member4.jpg",
+      "bio": "Я відповідаю за перевірку якості перекладу та тестування локалізованих ігор.",
+      "socialLinks": [
+        { "network": "linkedin", "url": "https://linkedin.com/in/svitlana" }
+      ]
+    },
+    {
+      "name": "Віктор Зайцев",
+      "role": "UX Дизайнер",
+      "image": "image/member5.jpg",
+      "bio": "Я розробляю інтерфейси, які роблять гру зручною для українських користувачів.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/viktor" }
+      ]
+    },
+    {
+      "name": "Юлія Тимошенко",
+      "role": "Маркетинг-менеджер",
+      "image": "image/member6.jpg",
+      "bio": "Я просуваю наші локалізації та працюю над збільшенням аудиторії наших гравців.",
+      "socialLinks": [
+        { "network": "instagram", "url": "https://instagram.com/yuliia" }
+      ]
+    },
+    {
+      "name": "Максим Руденко",
+      "role": "Перекладач",
+      "image": "image/member1.jpg",
+      "bio": "Я локалізую ігри для українських гравців, роблячи їх доступними для більш широкої аудиторії.",
+      "socialLinks": [
+        { "network": "twitter", "url": "https://twitter.com/maksym" }
+      ]
+    },
+    {
+      "name": "Валерія Лісова",
+      "role": "Креативний дизайнер",
+      "image": "image/member2.jpg",
+      "bio": "Я створюю візуальні елементи, які роблять ігровий процес більш приємним та захоплюючим.",
+      "socialLinks": [
+        { "network": "facebook", "url": "https://facebook.com/valeriia" }
+      ]
+    },
+    {
+      "name": "Антон Павленко",
+      "role": "Аналітик",
+      "image": "image/member3.jpg",
+      "bio": "Я займаюся аналізом даних, щоб покращити процес локалізації та забезпечити якість кожного перекладу.",
+      "socialLinks": [
+        { "network": "linkedin", "url": "https://linkedin.com/in/anton" }
+      ]
     }
   ]
 }
